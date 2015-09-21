@@ -1,0 +1,10 @@
+
+mysql> SHOW tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| Addressbook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
