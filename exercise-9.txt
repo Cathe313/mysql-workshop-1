@@ -1,0 +1,71 @@
+mysql> USE mysql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+mysql> CREATE DATABASE hatching_chick;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> CREATE TABLE Chicken_Count (
+    -> id int not null auto_increment,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Chicken_Count ADD COLUMN date DATETIME;                                                                                   
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken_Count ADD COLUMN numberOfRoosters INT;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken_Count ADD COLUMN numberOfHens INT;                                                                                                 
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken_Count ADD COLUMN numberOfChicks INT;                                                                                                
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> CREATE TABLE Chicks (id int not null auto_increment, PRIMARY KEY (id));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> ALTER TABLE Chicks ADD COLUMN chickId INT;                                                                                         
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicks ADD COLUMN dateOfBirth DATETIME;                                                                                                    
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicks ADD COLUMN dateOfAging DATETIME;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> DESCRIBE Chicken_Count;
++------------------+----------+------+-----+---------+----------------+
+| Field            | Type     | Null | Key | Default | Extra          |
++------------------+----------+------+-----+---------+----------------+
+| id               | int(11)  | NO   | PRI | NULL    | auto_increment |
+| date             | datetime | YES  |     | NULL    |                |
+| numberOfRoosters | int(11)  | YES  |     | NULL    |                |
+| numberOfHens     | int(11)  | YES  |     | NULL    |                |
+| numberOfChicks   | int(11)  | YES  |     | NULL    |                |
++------------------+----------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE Chicks;
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| id          | int(11)  | NO   | PRI | NULL    | auto_increment |
+| chickId     | int(11)  | YES  |     | NULL    |                |
+| dateOfBirth | datetime | YES  |     | NULL    |                |
+| dateOfAging | datetime | YES  |     | NULL    |                |
++-------------+----------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
