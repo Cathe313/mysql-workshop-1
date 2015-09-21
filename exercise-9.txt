@@ -45,6 +45,14 @@ mysql> ALTER TABLE Chicks ADD COLUMN dateOfAging DATETIME;
 Query OK, 0 rows affected (0.01 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE Chicks ADD COLUMN gender TINYINT(1);                                                                                                 
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicks ADD COLUMN dateOfDeath DATETIME;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
 
 mysql> DESCRIBE Chicken_Count;
 +------------------+----------+------+-----+---------+----------------+
@@ -59,13 +67,15 @@ mysql> DESCRIBE Chicken_Count;
 5 rows in set (0.00 sec)
 
 mysql> DESCRIBE Chicks;
-+-------------+----------+------+-----+---------+----------------+
-| Field       | Type     | Null | Key | Default | Extra          |
-+-------------+----------+------+-----+---------+----------------+
-| id          | int(11)  | NO   | PRI | NULL    | auto_increment |
-| chickId     | int(11)  | YES  |     | NULL    |                |
-| dateOfBirth | datetime | YES  |     | NULL    |                |
-| dateOfAging | datetime | YES  |     | NULL    |                |
-+-------------+----------+------+-----+---------+----------------+
++-------------+-----------+------+-----+---------+----------------+
+| Field       | Type      | Null | Key | Default | Extra          |
++-------------+-----------+------+-----+---------+----------------+
+| id          | int(11)   | NO   | PRI | NULL    | auto_increment |
+| chickId     | int(11)   | YES  |     | NULL    |                |
+| dateOfBirth | datetime  | YES  |     | NULL    |                |
+| dateOfAging | datetime  | YES  |     | NULL    |                |
+| gender      | tinyint(1)| YES  |     | NULL    |                |
+| dateOfDeath | datetime  | YES  |     | NULL    |                |
++-------------+-----------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
 
